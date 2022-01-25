@@ -117,6 +117,13 @@ removeAll.addEventListener('click', function () {
     localStorage.setItem("todos", JSON.stringify(todos));
     localStorage.setItem("completed", JSON.stringify(completed));
 })
+
+document.addEventListener('keypress', (e) => {
+    inputField.focus();
+    if (e.key == "Enter"){
+        addToDoButton.click();
+    }
+})
 window.onbeforeunload = function () {
     localStorage.setItem("todos", JSON.stringify(todos));
     localStorage.setItem("completed", JSON.stringify(completed));
